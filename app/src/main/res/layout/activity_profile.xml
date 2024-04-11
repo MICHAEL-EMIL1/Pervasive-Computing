@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile"
+    android:background="#EFEBEB"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/profileLayout"
+        android:layout_width="413dp"
+        android:layout_height="330dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rectangle3"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/rewan_wael"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/male_user_ek1"
+            android:layout_width="125dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="180dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="male_user_ek1"
+            android:src="@drawable/profile" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/rewan_wael"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:text="User Name"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileLayout" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="284dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="@color/purple"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Log Out"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:cornerRadius="?attr/listPreferredItemHeightLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rewan_wael" />
+
+    <ImageButton
+        android:id="@+id/arrow_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/img_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

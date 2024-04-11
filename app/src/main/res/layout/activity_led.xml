@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Led">
+
+
+    <ImageButton
+        android:id="@+id/arrow_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/img_1" />
+
+    <!-- Button to capture the boolean value -->
+    <Button
+        android:id="@+id/controlButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Turn On "
+        android:textSize="20dp"
+        android:layout_centerInParent="true" />
+
+
+</RelativeLayout>

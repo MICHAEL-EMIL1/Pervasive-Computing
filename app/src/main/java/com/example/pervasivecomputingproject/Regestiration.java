@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
@@ -69,7 +71,15 @@ public class Regestiration extends AppCompatActivity {
                 String Name = name.getText().toString();
                 String Birthdate = birthdate.getText().toString();
                 String Password = password.getText().toString();
-
+                Button uploadd = findViewById(R.id.upload_pic_btn);
+                uploadd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                        intent.setType("image/*");
+                        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+                    }
+                });
 
                 if (Username.equals("") || Email.equals("") || Birthdate.equals("") || Password.equals("")) {
                     Toast.makeText(getApplicationContext(), "Missing fields.", Toast.LENGTH_SHORT).show();
@@ -84,5 +94,23 @@ public class Regestiration extends AppCompatActivity {
                 startActivity(new Intent(Regestiration.this, SignIn.class));
             }
         });
+        Button uploadd = findViewById(R.id.upload_pic_btn);
+        uploadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri selectedImageUri = data.getData();
+            // You can now use the selectedImageUri to display the image or upload it
+            Toast.makeText(this, "Image selected: " + selectedImageUri.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 }

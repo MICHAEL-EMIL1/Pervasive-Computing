@@ -50,8 +50,27 @@ public class Search extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Handle item click here
                 String selectedItem = actionNames.get(position);
-                // Example: You can handle the item click as needed, e.g., show a Toast
-                Toast.makeText(Search.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
+
+                Intent intent;
+                switch (selectedItem) {
+                    case "Temperature":
+                        intent = new Intent(Search.this, Temperature.class);
+                        break;
+                    case "LCD":
+                        intent = new Intent(Search.this, LCD.class);
+                        break;
+                    case "Led":
+                        intent = new Intent(Search.this, Led.class);
+                        break;
+                    case "Keypad":
+                        intent = new Intent(Search.this, Keypad.class);
+                        break;
+                    default:
+                        // Default case if no match is found
+                        Toast.makeText(Search.this, "Unknown item selected", Toast.LENGTH_SHORT).show();
+                        return; // Exit the method if no matching activity is found
+                }
+                startActivity(intent);
             }
         });
 

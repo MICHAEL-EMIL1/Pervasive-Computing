@@ -5,15 +5,16 @@
     android:padding="16dp"
     tools:context=".Temperature">
 
-    <ImageButton
+    <Button
         android:id="@+id/arrow_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/img_1"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/_arrow_back_ios_24"
+        android:outlineSpotShadowColor="@color/black" />
 
     <TextView
         android:id="@+id/temperatureTextView"

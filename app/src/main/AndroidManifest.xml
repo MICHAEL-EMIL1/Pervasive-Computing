@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PervasiveComputingProject"
         tools:targetApi="31">
         <activity
+            android:name=".Regestiration"
+            android:exported="true" />
+        <activity
             android:name=".Temperature"
             android:exported="true" />
         <activity
@@ -23,9 +26,6 @@
             android:exported="true" />
         <activity
             android:name=".ResetPassword"
-            android:exported="true" />
-        <activity
-            android:name=".Regestiration"
             android:exported="true" />
         <activity
             android:name=".Profile"

@@ -111,6 +111,6 @@ public class Regestiration extends AppCompatActivity {
             Uri selectedImageUri = data.getData();
             // You can now use the selectedImageUri to display the image or upload it
             Toast.makeText(this, "Image selected: " + selectedImageUri.toString(), Toast.LENGTH_SHORT).show();
-        }
+ }
     }
 }

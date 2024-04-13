@@ -9,8 +9,8 @@
 
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="729dp"
+        android:layout_width="400dp"
+        android:layout_height="790dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,12 +25,9 @@
             android:orientation="vertical">
 
 
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -120,14 +117,6 @@
             </LinearLayout>
 
 
-
-
-
-
-
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,9 +184,6 @@
                     android:textSize="18sp" />
 
             </LinearLayout>
-
-
-
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -328,10 +314,6 @@
             </LinearLayout>
 
 
-
-
-
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -390,7 +372,6 @@
 
 
             </LinearLayout>
-
 
 
         </LinearLayout>

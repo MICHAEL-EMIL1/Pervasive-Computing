@@ -19,7 +19,7 @@ public class Led extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_led);
 
-        ImageButton backButton = findViewById(R.id.arrow_icon);
+        Button backButton = findViewById(R.id.arrow_icon);
         Button controlButton = findViewById(R.id.controlButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

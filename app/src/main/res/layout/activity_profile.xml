@@ -33,6 +33,7 @@
             android:layout_marginRight="10dp"
             android:contentDescription="male_user_ek1"
             android:src="@drawable/profile" />
+
     </LinearLayout>
 
     <TextView
@@ -68,15 +69,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rewan_wael" />
 
-    <ImageButton
+    <Button
         android:id="@+id/arrow_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/img_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/_arrow_back_ios_24"
+        android:outlineSpotShadowColor="@color/black"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="604dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

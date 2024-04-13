@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class LCD extends AppCompatActivity {
-    private ImageButton arrowIcon;
+    private Button arrowIcon;
     private EditText messageEditText;
     private Button sendButton;
 

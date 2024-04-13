@@ -18,7 +18,7 @@ public class Profile extends AppCompatActivity {
     private TextView userNameTextView;
     private Button logoutButton;
 
-    private  ImageButton Arrow;
+    private  Button Arrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

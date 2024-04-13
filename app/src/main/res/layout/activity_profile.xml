@@ -78,6 +78,7 @@
         android:background="@drawable/_arrow_back_ios_24"
         android:outlineSpotShadowColor="@color/black"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="604dp" />
+        tools:layout_editor_absoluteY="604dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

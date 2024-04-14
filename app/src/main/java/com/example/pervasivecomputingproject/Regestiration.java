@@ -33,6 +33,7 @@ public class Regestiration extends AppCompatActivity {
         EditText name = findViewById(R.id.name);
         EditText birthdate = findViewById(R.id.sign_up_birthdate);
         EditText password = findViewById(R.id.sign_up_password);
+        EditText confpassword = findViewById(R.id._password);
         ImageButton calenderBtn = findViewById(R.id.sign_up_calender_btn);
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +72,7 @@ public class Regestiration extends AppCompatActivity {
                 String Name = name.getText().toString();
                 String Birthdate = birthdate.getText().toString();
                 String Password = password.getText().toString();
+                String Confpassword= confpassword.getText().toString();
                 Button uploadd = findViewById(R.id.upload_pic_btn);
                 uploadd.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -81,10 +83,27 @@ public class Regestiration extends AppCompatActivity {
                     }
                 });
 
-                if (Username.equals("") || Email.equals("") || Birthdate.equals("") || Password.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Missing fields.", Toast.LENGTH_SHORT).show();
+                if (Name.equals("")) {
+                    // Show toast message
+                    Toast.makeText(getApplicationContext(), "Missing Name.", Toast.LENGTH_SHORT).show();
+                }else if (Username.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing UserName.", Toast.LENGTH_SHORT).show();
+                }else if (Email.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Email.", Toast.LENGTH_SHORT).show();
+                }else if (Birthdate.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Birthdate.", Toast.LENGTH_SHORT).show();
+                }else if (Password.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing password.", Toast.LENGTH_SHORT).show();
+                }else if (Confpassword.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Confirm password.", Toast.LENGTH_SHORT).show();
+                }else if (!Password.equals(Confpassword)) {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                }else {
+                    // Input is valid, proceed to home page
+                    Intent i = new Intent(Regestiration.this, SignIn.class);
+                    startActivity(i);
+                    finish(); // Optionally finish SignIn activity to prevent going back when pressing back button
                 }
-                startActivity(new Intent(Regestiration.this, home.class));
             }
         });
 

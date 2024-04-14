@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.InputType;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -34,38 +32,9 @@ public class Regestiration extends AppCompatActivity {
         EditText email = findViewById(R.id.sign_up_email);
         EditText name = findViewById(R.id.name);
         EditText birthdate = findViewById(R.id.sign_up_birthdate);
-        //EditText password = findViewById(R.id.sign_up_password);
+        EditText password = findViewById(R.id.sign_up_password);
+        EditText confpassword = findViewById(R.id._password);
         ImageButton calenderBtn = findViewById(R.id.sign_up_calender_btn);
-
-
-        EditText passwordEditText = findViewById(R.id.sign_up_password);
-        passwordEditText.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int DRAWABLE_RIGHT = 2;
-
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (event.getRawX() >= (passwordEditText.getRight() - passwordEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        // your action here
-                        if (passwordEditText.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
-                            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                            passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_icon, 0);
-                        } else {
-                            passwordEditText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                            passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_icon, 0);
-                        }
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
-
-
-
-
-
-
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,7 +71,8 @@ public class Regestiration extends AppCompatActivity {
                 String Email = email.getText().toString();
                 String Name = name.getText().toString();
                 String Birthdate = birthdate.getText().toString();
-                String Password = passwordEditText.getText().toString();
+                String Password = password.getText().toString();
+                String Confpassword= confpassword.getText().toString();
                 Button uploadd = findViewById(R.id.upload_pic_btn);
                 uploadd.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -113,10 +83,27 @@ public class Regestiration extends AppCompatActivity {
                     }
                 });
 
-                if (Username.equals("") || Email.equals("") || Birthdate.equals("") || Password.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Missing fields.", Toast.LENGTH_SHORT).show();
+                if (Name.equals("")) {
+                    // Show toast message
+                    Toast.makeText(getApplicationContext(), "Missing Name.", Toast.LENGTH_SHORT).show();
+                }else if (Username.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing UserName.", Toast.LENGTH_SHORT).show();
+                }else if (Email.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Email.", Toast.LENGTH_SHORT).show();
+                }else if (Birthdate.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Birthdate.", Toast.LENGTH_SHORT).show();
+                }else if (Password.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing password.", Toast.LENGTH_SHORT).show();
+                }else if (Confpassword.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Missing Confirm password.", Toast.LENGTH_SHORT).show();
+                }else if (!Password.equals(Confpassword)) {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                }else {
+                    // Input is valid, proceed to home page
+                    Intent i = new Intent(Regestiration.this, SignIn.class);
+                    startActivity(i);
+                    finish(); // Optionally finish SignIn activity to prevent going back when pressing back button
                 }
-                startActivity(new Intent(Regestiration.this, home.class));
             }
         });
 

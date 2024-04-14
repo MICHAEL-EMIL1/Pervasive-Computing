@@ -58,6 +58,7 @@ public class SignIn extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Missing password.", Toast.LENGTH_SHORT).show();
                 }else {
                     // Input is valid, proceed to home page
+                    Toast.makeText(getApplicationContext(), "Welcome.", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(SignIn.this, home.class);
                     startActivity(i);
                     finish(); // Optionally finish SignIn activity to prevent going back when pressing back button

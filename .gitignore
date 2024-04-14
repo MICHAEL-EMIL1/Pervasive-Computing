@@ -1,3 +1,4 @@
+# General exclusions
 *.iml
 .gradle
 /local.properties
@@ -17,3 +18,8 @@ local.properties
 # Exclude built Gradle files
 gradle.properties
 settings.gradle
+
+# Exclude specific files in app module
+app/build.gradle
+app/gradle-wrapper.properties
+app/settings.gradle

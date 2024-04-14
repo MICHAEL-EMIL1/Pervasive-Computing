@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.EditText;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,10 +22,9 @@ public class SignIn extends AppCompatActivity {
         Button signUp = findViewById(R.id.sign_in_sign_up_btn);
         Button forgetPassword = findViewById(R.id.sign_in_forget_password);
         CheckBox rememberMeCheckBox = findViewById(R.id.sign_up_remember_me);
-        TextView em = findViewById(R.id.sign_in_email);
-        String email = em.getText().toString();
-        TextView pass = findViewById(R.id.sign_in_password);
-        String password = pass.getText().toString();
+
+        EditText editTextEmail = findViewById(R.id.sign_in_email);
+        EditText editTextPassword = findViewById(R.id.sign_in_password);
 
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("rememberMe", "");
@@ -50,11 +47,21 @@ public class SignIn extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (email.equals("") || password.equals("") ) {
-                    Toast.makeText(getApplicationContext(), "Missing fields.", Toast.LENGTH_SHORT).show();
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+
+                if (email.equals("")) {
+                    // Show toast message
+                    Toast.makeText(getApplicationContext(), "Missing email.", Toast.LENGTH_SHORT).show();
+                }else if (password.equals("")) {
+                    // Show toast message
+                    Toast.makeText(getApplicationContext(), "Missing password.", Toast.LENGTH_SHORT).show();
+                }else {
+                    // Input is valid, proceed to home page
+                    Intent i = new Intent(SignIn.this, home.class);
+                    startActivity(i);
+                    finish(); // Optionally finish SignIn activity to prevent going back when pressing back button
                 }
-                Intent i = new Intent(SignIn.this,home.class);
-                startActivity(i);
             }
         });
     }

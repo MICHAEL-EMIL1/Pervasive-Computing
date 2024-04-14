@@ -16,3 +16,4 @@ local.properties
 
 # Exclude built Gradle files
 gradle.properties
+settings.gradle

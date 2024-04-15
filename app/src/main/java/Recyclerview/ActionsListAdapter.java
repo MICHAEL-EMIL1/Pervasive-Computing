@@ -46,7 +46,7 @@ public class ActionsListAdapter extends RecyclerView.Adapter<ActionsListAdapter.
             public void onClick(View v) {
                 // Retrieve the activity class for the current item
                 Class<?> activityClass = currentAction.getActivityClass();
-                // Start the corresponding activity
+                // Start  activity
                 Intent intent = new Intent(v.getContext(), activityClass);
                 v.getContext().startActivity(intent);
             }

@@ -7,11 +7,10 @@ import android.graphics.BitmapFactory;
 import java.util.ArrayList;
 
 public class Actions {
-    private int imageResId; // Resource ID of the image
+    private int imageResId; // Resource ID ofimage
     private String title;
 
     private Class<?> activityClass;
-
 
 
     public Actions(String title, int imageResId, Class<?> activityClass) {

@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -34,9 +35,35 @@ public class Regestiration extends AppCompatActivity {
         EditText email = findViewById(R.id.sign_up_email);
         EditText name = findViewById(R.id.name);
         EditText birthdate = findViewById(R.id.sign_up_birthdate);
-
+        //TextView CONF = findViewById(R.id.conffPassword);
         EditText confpassword = findViewById(R.id._password);
         ImageButton calenderBtn = findViewById(R.id.sign_up_calender_btn);
+
+
+
+        confpassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_RIGHT = 2;
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (confpassword.getRight() - confpassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        // your action here
+                        if (confpassword.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                            confpassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                            confpassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_icon, 0);
+                        } else {
+                            confpassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                            confpassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_icon, 0);
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+
 
 
         EditText passwordEditText = findViewById(R.id.sign_up_password);

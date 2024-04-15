@@ -160,7 +160,7 @@
                             android:id="@+id/sign_up_remember_me"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:minWidth="48dp"
+                            android:minWidth="4dp"
                             android:minHeight="48dp" />
                     </LinearLayout>
 

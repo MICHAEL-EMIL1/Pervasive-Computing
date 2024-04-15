@@ -34,7 +34,7 @@ public class Regestiration extends AppCompatActivity {
         EditText email = findViewById(R.id.sign_up_email);
         EditText name = findViewById(R.id.name);
         EditText birthdate = findViewById(R.id.sign_up_birthdate);
-        //EditText password = findViewById(R.id.sign_up_password);
+
         EditText confpassword = findViewById(R.id._password);
         ImageButton calenderBtn = findViewById(R.id.sign_up_calender_btn);
 

@@ -126,6 +126,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="53dp"
                             android:background="@drawable/rounded_textbox"
+                            android:drawableRight="@drawable/eye_icon"
 
                             android:drawablePadding="10dp"
                             android:ems="10"

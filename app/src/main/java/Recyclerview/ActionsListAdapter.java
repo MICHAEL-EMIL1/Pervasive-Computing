@@ -1,11 +1,10 @@
 package Recyclerview;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,16 +17,53 @@ import com.example.pervasivecomputingproject.R;
 import java.util.ArrayList;
 
 public class ActionsListAdapter extends RecyclerView.Adapter<ActionsListAdapter.RecyclerViewHolder>{
-    private ArrayList<Actions> actionslist = new ArrayList<>();
+    private ArrayList<Actions> actionsList = new ArrayList<>();
+    private ArrayList<Actions> actionsListFull = new ArrayList<>();
     private OnItemClickListener listener;
-
-    public ActionsListAdapter(OnItemClickListener listener) {
+    public ActionsListAdapter(ArrayList<Actions> actionsList, OnItemClickListener listener) {
+        this.actionsList = actionsList; // Assign parameter to instance variable
+        this.actionsListFull = new ArrayList<>(this.actionsList);
         this.listener = listener;
+    }
+
+
+
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                if (constraint == null || constraint.length() == 0) {
+                    results.values = actionsListFull;
+                    results.count = actionsListFull.size();
+                } else {
+                    String filterPattern = constraint.toString().toLowerCase().trim();
+                    ArrayList<Actions> filteredList = new ArrayList<>();
+                    for (Actions action : actionsListFull) {
+                        if (action.getTitle().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(action);
+                        }
+                    }
+                    results.values = filteredList;
+                    results.count = filteredList.size();
+                }
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                actionsList.clear();
+                actionsList.addAll((ArrayList) results.values);
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
+
+
 
     @NonNull
     @Override
@@ -37,7 +73,7 @@ public class ActionsListAdapter extends RecyclerView.Adapter<ActionsListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder,int position) {
-        Actions currentAction = actionslist.get(position);
+        Actions currentAction = actionsList.get(position);
         holder.img.setImageResource(currentAction.getImageResId());
         holder.actions.setText(currentAction.getTitle());
 
@@ -56,12 +92,12 @@ public class ActionsListAdapter extends RecyclerView.Adapter<ActionsListAdapter.
 
     @Override
     public int getItemCount() {
-        return actionslist.size();
+        return actionsList.size();
     }
 
     public void setList(ArrayList<Actions>actionslist){
 
-        this.actionslist= actionslist;
+        this.actionsList= actionslist;
         notifyDataSetChanged();
     }
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
@@ -73,5 +109,6 @@ public class ActionsListAdapter extends RecyclerView.Adapter<ActionsListAdapter.
             actions = itemView.findViewById(R.id.recyclerviewitem_title);
             img=itemView.findViewById(R.id.recyclerviewitem_imageView);
         }
+
     }
 }

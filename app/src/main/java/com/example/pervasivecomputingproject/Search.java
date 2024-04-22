@@ -40,11 +40,10 @@ public class Search extends AppCompatActivity {
         actionNames.add("Led");
         actionNames.add("Keypad");
 
-        // Initialize the adapter with the full list of actions
+
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, actionNames);
         list.setAdapter(adapter);
 
-        // Set click listener for ListView items
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -30,9 +30,7 @@
         <activity
             android:name=".Profile"
             android:exported="true" />
-        <activity
-            android:name=".Log"
-            android:exported="true" />
+
         <activity
             android:name=".Led"
             android:exported="true" />
@@ -42,12 +40,25 @@
         <activity
             android:name=".Keypad"
             android:exported="true" />
-        <activity
-            android:name=".home"
-            android:exported="true" />
+
         <activity
             android:name=".Forgetpass"
             android:exported="true" />
+
+        <activity
+            android:name=".Log_File"
+            android:exported="true" />
+        <activity
+            android:name=".home"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

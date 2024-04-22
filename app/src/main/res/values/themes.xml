@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PervasiveComputingProject" parent="Theme.Material3.DayNight.NoActionBar">
+     <style name="Base.Theme.PervasiveComputingProject" parent="Theme.AppCompat.DayNight.NoActionBar" >
+        <!-- Your theme customizations -->
 
-        <!-- Customize your light theme here. -->
+
+
+    <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryVariant">@color/dark_gray</item>

@@ -5,14 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pervasivecomputingproject.home;
-
-public class Log extends AppCompatActivity {
+public class Log_File extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +20,7 @@ public class Log extends AppCompatActivity {
         back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Log.this, home.class));
+                startActivity(new Intent(Log_File.this, home.class));
             }
         });
 
@@ -37,6 +33,7 @@ public class Log extends AppCompatActivity {
     }
 
     // Helper method to add a TableRow with TextViews to the TableLayout
+    /*
     private void addRow(TableLayout tableLayout, String activity, String action, String time) {
         TableRow row = new TableRow(this);
 
@@ -62,4 +59,6 @@ public class Log extends AppCompatActivity {
         textView.setTextSize(17);
         return textView;
     }
+
+     */
 }

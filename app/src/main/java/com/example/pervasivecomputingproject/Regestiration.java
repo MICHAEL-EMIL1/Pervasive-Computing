@@ -158,9 +158,9 @@ public class Regestiration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Passwords do not match.", Toast.LENGTH_SHORT).show();
                 }else {
                     // Input is valid, proceed to home page
-                    Intent i = new Intent(Regestiration.this, SignIn.class);
+                    Intent i = new Intent(Regestiration.this, home.class);
                     startActivity(i);
-                    finish(); // Optionally finish SignIn activity to prevent going back when pressing back button
+                    finish();
                 }
             }
         });

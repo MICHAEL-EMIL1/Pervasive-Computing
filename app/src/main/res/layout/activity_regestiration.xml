@@ -72,7 +72,7 @@
 
                 <Button
                     android:id="@+id/upload_pic_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="70dp"
@@ -376,6 +376,7 @@
                     android:text="Sign Up"
                     android:textAlignment="center"
                     android:textSize="20sp"
+                    android:backgroundTint="@color/purple"
                     app:cornerRadius="?attr/listPreferredItemHeightLarge" />
 
 

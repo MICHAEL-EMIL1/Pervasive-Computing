@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "324820058723",
+    "firebase_url": "https://pervasive-computing-f250a-default-rtdb.firebaseio.com",
+    "project_id": "pervasive-computing-f250a",
+    "storage_bucket": "pervasive-computing-f250a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324820058723:android:96ed210fd6f18420b26e56",
+        "android_client_info": {
+          "package_name": "com.example.pervasivecomputingproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324820058723-lnodj0dai1v52nvbbbfv4etb8455he4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pervasivecomputingproject",
+            "certificate_hash": "138b242fc9f7e1dc349bb8721efd67cd4e9c425a"
+          }
+        },
+        {
+          "client_id": "324820058723-hlc6or0k7268rm4v4sbvklho7q8gqth3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYKmWRohRJD69vLAjoD0To-s5-PfEuoh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324820058723-hlc6or0k7268rm4v4sbvklho7q8gqth3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -177,8 +177,17 @@
                             android:text="Login"
                             android:textAlignment="center"
                             android:textSize="20sp"
+                            android:backgroundTint="@color/purple"
                             app:cornerRadius="?attr/listPreferredItemHeightLarge" />
                     </LinearLayout>
+
+                    <View
+                        android:layout_width="342dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#CCCCCC" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -188,35 +197,72 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
+
                         <TextView
-                            android:id="@+id/textView8"
+                            android:id="@+id/loginwith"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
                             android:paddingRight="5dp"
-                            android:text="Not a member yet?"
+                            android:text="Login with"
                             android:textColor="@color/black"
                             android:textSize="12dp" />
 
 
                         <Button
-                            android:id="@+id/sign_in_sign_up_btn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@android:color/transparent"
-                            android:backgroundTint="#FFFFFF"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="Sign Up"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:textColor="@color/purple"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
+                            android:id="@+id/googleee"
+                            android:layout_width="43dp"
+                            android:layout_height="39dp"
+                            android:background="@drawable/ggg"
+
+
                             android:theme="@style/Platform.MaterialComponents.Light"
                             android:visibility="visible"
                             app:iconTint="@color/white"></Button>
 
 
                     </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingRight="5dp"
+                        android:text="Not a member yet?"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+
+                    <Button
+                        android:id="@+id/sign_in_sign_up_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Sign Up"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/purple"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:theme="@style/Platform.MaterialComponents.Light"
+                        android:visibility="visible"
+                        app:iconTint="@color/white"></Button>
+
+
+                </LinearLayout>
+
+
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -240,6 +286,8 @@
                             android:visibility="visible"
                             app:iconTint="@color/white"></Button>
                     </LinearLayout>
+
+
 
 
                 </LinearLayout>

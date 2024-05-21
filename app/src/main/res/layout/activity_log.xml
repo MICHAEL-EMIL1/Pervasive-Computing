@@ -1,187 +1,146 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Log">
-
-    <!-- Top bar -->
-
-    <!-- Table -->
-
-    <RelativeLayout
-        android:id="@+id/rlTopBar"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_marginBottom="450dp"
-        android:background="#633B7C"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <ImageButton
-            android:id="@+id/back"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/leftarrow"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="8dp"
-            android:text="Log File"
-            android:textColor="@android:color/white"
-            android:textSize="25dp"
-            android:textStyle="normal|bold" />
-    </RelativeLayout>
-
-
-    <TableLayout
-        android:id="@+id/tableLayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".LogFileActivity">
+    <!-- TextView to display LED Status -->
+    <TextView
+        android:id="@+id/ledStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp">
+        android:text="LED Status:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Table header -->
-        <TableRow
-            android:background="#B7A3C3">
-            <!-- Activities -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Activities"
-                android:textColor="@android:color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+    <!-- TextView to display LED Status Value -->
+    <TextView
+        android:id="@+id/ledStatusValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ledStatusTextView"
 
-            <!-- Action -->
-            <TextView
-                android:layout_width="177dp"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Action"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <!-- Time -->
-            <TextView
-                android:layout_width="209dp"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Time"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
-        </TableRow>
+    <!-- TextView to display Message Added By -->
+    <TextView
+        android:id="@+id/messageAddedByTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ledStatusValueTextView"
+        android:text="Message Added By:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Table rows -->
+    <!-- TextView to display Message Added By Value -->
+    <TextView
+        android:id="@+id/messageAddedByValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageAddedByTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Led row with empty cells -->
-        <TableRow>
-            <!-- Activities: Led -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Led"
-                android:background="#B7A3C3"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+    <!-- TextView to display Message Content -->
+    <TextView
+        android:id="@+id/messageContentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageAddedByValueTextView"
+        android:text="Message Content:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <!-- Action: Led -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Turned on"
-                android:gravity="center"
-                android:textSize="17dp"/>
+    <!-- TextView to display Message Content Value -->
+    <TextView
+        android:id="@+id/messageContentValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageContentTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="11:00 AM"
-                android:textSize="17dp"/>
-        </TableRow>
+    <!-- TextView to display Message Timestamp -->
+    <TextView
+        android:id="@+id/messageTimestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageContentValueTextView"
+        android:text="Message Timestamp:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- LCD row -->
-        <TableRow>
-            <!-- Activities: LCD -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Message"
-                android:background="#B7A3C3"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+    <!-- TextView to display Message Timestamp Value -->
+    <TextView
+        android:id="@+id/messageTimestampValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageTimestampTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <!-- Action: LCD -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Welcome !!!!"
-                android:gravity="center"
-                android:textSize="17dp"/>
+    <!-- TextView to display Password Added By -->
+    <TextView
+        android:id="@+id/passwordAddedByTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageTimestampValueTextView"
+        android:text="Password Added By:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="1:20 PM"
-                android:textSize="17dp"/>
-        </TableRow>
+    <!-- TextView to display Password Added By Value -->
+    <TextView
+        android:id="@+id/passwordAddedByValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordAddedByTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Keypad row -->
-        <TableRow>
-            <!-- Activities: Keypad -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Door"
-                android:background="#B7A3C3"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+    <!-- TextView to display Password -->
+    <TextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordAddedByValueTextView"
+        android:text="Password:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <!-- Action: Keypad -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Unlocked"
-                android:gravity="center"
-                android:textSize="17dp"/>
+    <!-- TextView to display Password Value -->
+    <TextView
+        android:id="@+id/passwordValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="5:45 PM"
-                android:textSize="17dp"/>
-        </TableRow>
+    <!-- TextView to display Password -->
+    <TextView
+        android:id="@+id/passwordTimestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordValueTextView"
+        android:text="Password Timestamp:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Temp row -->
-        <TableRow/>
+    <!-- TextView to display Password Value -->
+    <TextView
+        android:id="@+id/passwordTimestampValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTimestampTextView"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-
-        <!-- ... Additional rows ... -->
-
-    </TableLayout>
 </RelativeLayout>
